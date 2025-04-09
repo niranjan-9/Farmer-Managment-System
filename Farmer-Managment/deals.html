@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deals - Farmer Connect</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body class="bg-green-50 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-green-600 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-leaf text-2xl"></i>
+                    <span class="font-bold text-xl">Farmer Connect</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="hover:text-green-200 transition duration-300">Home</a>
+                    <a href="market-prices.html" class="hover:text-green-200 transition duration-300">Market Prices</a>
+                    <a href="marketplace.html" class="hover:text-green-200 transition duration-300">Marketplace</a>
+                    <a href="farm-management.html" class="hover:text-green-200 transition duration-300">Farm Management</a>
+                    <a href="contracts.html" class="hover:text-green-200 transition duration-300">Contracts</a>
+                    <a href="deals.html" class="hover:text-green-200 transition duration-300 border-b-2 border-white">Deals</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-green-700 pb-4 animate__animated animate__fadeIn">
+            <div class="container mx-auto px-4 flex flex-col space-y-3">
+                <a href="index.html" class="block py-2 px-4 text-white hover:bg-green-800 rounded transition duration-300">Home</a>
+                <a href="market-prices.html" class="block py-2 px-4 text-white hover:bg-green-800 rounded transition duration-300">Market Prices</a>
+                <a href="marketplace.html" class="block py-2 px-4 text-white hover:bg-green-800 rounded transition duration-300">Marketplace</a>
+                <a href="farm-management.html" class="block py-2 px-4 text-white hover:bg-green-800 rounded transition duration-300">Farm Management</a>
+                <a href="contracts.html" class="block py-2 px-4 text-white hover:bg-green-800 rounded transition duration-300">Contracts</a>
+                <a href="deals.html" class="block py-2 px-4 text-white hover:bg-green-800 rounded transition duration-300">Deals</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-green-700 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl font-bold mb-4 animate__animated animate__fadeInDown">Affordable Deals</h1>
+                <p class="text-xl mb-8 animate__animated animate__fadeInUp">Find the best deals for crops, tools, and resources with location-based price comparisons and deal alerts.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Deals Section -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <!-- Search and Filter -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div>
+                        <label for="category" class="block text-gray-700 mb-2">Category</label>
+                        <select id="category" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <option value="all">All Categories</option>
+                            <option value="seeds">Seeds</option>
+                            <option value="fertilizers">Fertilizers</option>
+                            <option value="pesticides">Pesticides</option>
+                            <option value="equipment">Equipment</option>
+                            <option value="tools">Tools</option>
+                            <option value="packaging">Packaging</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="location" class="block text-gray-700 mb-2">Location</label>
+                        <select id="location" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <option value="all">All Locations</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="punjab">Punjab</option>
+                            <option value="haryana">Haryana</option>
+                            <option value="maharashtra">Maharashtra</option>
+                            <option value="gujarat">Gujarat</option>
+                            <option value="wb">West Bengal</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="price-range" class="block text-gray-700 mb-2">Price Range</label>
+                        <select id="price-range" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <option value="all">All Prices</option>
+                            <option value="low">₹0 - ₹500</option>
+                            <option value="medium">₹500 - ₹2,000</option>
+                            <option value="high">₹2,000+</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="sort-by" class="block text-gray-700 mb-2">Sort By</label>
+                        <select id="sort-by" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <option value="discount">Highest Discount</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="expiry">Expiring Soon</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-4 flex justify-center">
+                    <button id="apply-filters" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-filter mr-2"></i> Apply Filters
+                    </button>
+                </div>
+            </div>
+
+            <!-- Featured Deals -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-semibold mb-6 flex items-center">
+                    <i class="fas fa-star text-green-500 mr-2"></i> Featured Deals
+                </h2>
+                <div id="deals-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Deals will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Nearby Deals Map -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-semibold mb-6 flex items-center">
+                    <i class="fas fa-map-marker-alt text-green-500 mr-2"></i> Deals Near You
+                </h2>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="mb-6">
+                        <p class="text-gray-600 mb-4">
+                            Enable location services to see the best deals available in your area. Our AI-powered system will
+                            recommend cost-effective options nearby.
+                        </p>
+                        <button id="enable-location" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">
+                            <i class="fas fa-location-arrow mr-2"></i> Enable Location
+                        </button>
+                    </div>
+                    <div class="h-64 w-full bg-gray-100 rounded-lg flex items-center justify-center">
+                        <p class="text-gray-500">Map with nearby deals will be displayed here</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deal Alerts -->
+            <div class="bg-green-50 rounded-lg p-8 shadow-md">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="mb-6 md:mb-0 md:mr-6">
+                        <h2 class="text-2xl font-semibold mb-2 flex items-center">
+                            <i class="fas fa-bell text-green-500 mr-2"></i> Get Deal Alerts
+                        </h2>
+                        <p class="text-gray-600">
+                            Subscribe to receive notifications when prices drop for your preferred farming supplies. Our AI tracks
+                            market trends and sends alerts when it's the best time to buy.
+                        </p>
+                    </div>
+                    <div class="w-full md:w-auto">
+                        <form id="deal-alert-form" class="flex flex-col sm:flex-row gap-3">
+                            <input type="email" placeholder="Your Email Address" class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <select class="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <option value="">Select Category</option>
+                                <option value="seeds">Seeds</option>
+                                <option value="fertilizers">Fertilizers</option>
+                                <option value="pesticides">Pesticides</option>
+                                <option value="equipment">Equipment</option>
+                            </select>
+                            <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300 whitespace-nowrap">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deal Modal -->
+    <div id="deal-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden animate__animated animate__fadeIn modal">
+        <div class="bg-white rounded-lg shadow-xl p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-green-800" id="deal-title">Deal Title</h3>
+                <button class="close-modal text-gray-500 hover:text-gray-700 focus:outline-none">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <img id="deal-image" src="https://via.placeholder.com/400x300" alt="Deal" class="w-full h-64 object-cover rounded-lg">
+                </div>
+                <div>
+                    <div class="mb-4">
+                        <p class="text-3xl font-bold text-gray-800" id="deal-price">₹0</p>
+                        <div class="flex items-center">
+                            <p class="text-gray-500 line-through mr-2" id="deal-original-price">₹0</p>
+                            <span class="bg-red-100 text-red-700 text-xs font-semibold px-2.5 py-0.5 rounded" id="deal-discount">0% OFF</span>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-600" id="deal-description">Deal description</p>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-sm text-gray-600"><span class="font-medium">Seller:</span> <span id="deal-seller">Seller Name</span></p>
+                        <p class="text-sm text-gray-600"><span class="font-medium">Location:</span> <span id="deal-location">Location</span></p>
+                        <div class="flex items-center mt-1">
+                            <span class="text-sm text-gray-600 mr-1">Rating:</span>
+                            <span id="deal-rating"></span>
+                        </div>
+                    </div>
+                    <p class="text-sm" id="deal-expiry">Expires in X days</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-6">
+                <div class="flex justify-between">
+                    <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">
+                        <i class="fas fa-shopping-cart mr-2"></i> Buy Now
+                    </button>
+                    <button class="bg-white border border-green-600 text-green-600 hover:bg-green-50 font-bold py-2 px-6 rounded-lg transition duration-300">
+                        <i class="fas fa-phone mr-2"></i> Contact Seller
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-leaf text-2xl text-green-400"></i>
+                        <span class="font-bold text-xl">Farmer Connect</span>
+                    </div>
+                    <p class="text-gray-400">Empowering farmers with technology and market access.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="market-prices.html" class="text-gray-400 hover:text-white transition duration-300">Market Prices</a></li>
+                        <li><a href="marketplace.html" class="text-gray-400 hover:text-white transition duration-300">Marketplace</a></li>
+                        <li><a href="farm-management.html" class="text-gray-400 hover:text-white transition duration-300">Farm Management</a></li>
+                        <li><a href="contracts.html" class="text-gray-400 hover:text-white transition duration-300">Contracts</a></li>
+                        <li><a href="deals.html" class="text-gray-400 hover:text-white transition duration-300">Deals</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-map-marker-alt mt-1 text-green-400"></i>
+                            <span class="text-gray-400">123 Farming Road, Agritown, India</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-phone mt-1 text-green-400"></i>
+                            <span class="text-gray-400">+91 1234567890</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-envelope mt-1 text-green-400"></i>
+                            <span class="text-gray-400">info@farmerconnect.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates and farming tips.</p>
+                    <form id="newsletter-form" class="flex flex-col space-y-2">
+                        <input type="email" placeholder="Your Email" class="px-4 py-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-green-400">
+                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Farmer Connect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/deals.js"></script>
+</body>
+</html>

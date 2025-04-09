@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Connect - Agricultural Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body class="bg-green-50 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-green-600 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-leaf text-2xl"></i>
+                    <span class="font-bold text-xl">Farmer Connect</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="hover:text-green-200 transition duration-300 border-b-2 border-white">Home</a>
+                    <a href="market-prices.html" class="hover:text-green-200 transition duration-300">Market Prices</a>
+                    <a href="marketplace.html" class="hover:text-green-200 transition duration-300">Marketplace</a>
+                    <a href="farm-management.html" class="hover:text-green-200 transition duration-300">Farm Management</a>
+                    <a href="contracts.html" class="hover:text-green-200 transition duration-300">Contracts</a>
+                    <a href="deals.html" class="hover:text-green-200 transition duration-300">Deals</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-green-700 pb-4 animate__animated animate__fadeIn">
+            <div class="container mx-auto px-4 flex flex-col space-y-3">
+                <a href="index.html" class="block py-2 px-4 text-white hover:bg-green-800 rounded transition duration-300">Home</a>
+                <a href="market-prices.html" class="block py-2 px-4 text-white hover:bg-green-800 rounded transition duration-300">Market Prices</a>
+                <a href="marketplace.html" class="block py-2 px-4 text-white hover:bg-green-800 rounded transition duration-300">Marketplace</a>
+                <a href="farm-management.html" class="block py-2 px-4 text-white hover:bg-green-800 rounded transition duration-300">Farm Management</a>
+                <a href="contracts.html" class="block py-2 px-4 text-white hover:bg-green-800 rounded transition duration-300">Contracts</a>
+                <a href="deals.html" class="block py-2 px-4 text-white hover:bg-green-800 rounded transition duration-300">Deals</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-cover bg-center h-screen flex items-center" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="container mx-auto px-4 z-10 text-white">
+            <div class="max-w-2xl animate__animated animate__fadeInUp">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Empowering Farmers, Connecting Markets</h1>
+                <p class="text-xl mb-8">A comprehensive platform designed to solve marketing, dealing, and management challenges for farmers and dealers.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="marketplace.html" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-center transform hover:scale-105">
+                        Explore Marketplace
+                    </a>
+                    <a href="#features" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-center transform hover:scale-105">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-800">Our Key Features</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200 transform transition duration-500 hover:scale-105">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-chart-line text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-2">Market Price Value</h3>
+                    <p class="text-gray-600 text-center">Get real-time market prices, historical trends, and SMS alerts to make informed selling decisions.</p>
+                    <div class="mt-4 text-center">
+                        <a href="market-prices.html" class="text-green-600 hover:text-green-800 font-medium inline-flex items-center">
+                            Learn more
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200 transform transition duration-500 hover:scale-105">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-store text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-2">Direct Market Access</h3>
+                    <p class="text-gray-600 text-center">Connect directly with buyers, eliminating intermediaries and increasing your profits.</p>
+                    <div class="mt-4 text-center">
+                        <a href="marketplace.html" class="text-green-600 hover:text-green-800 font-medium inline-flex items-center">
+                            Learn more
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200 transform transition duration-500 hover:scale-105">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-tasks text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-2">Farmer Management System</h3>
+                    <p class="text-gray-600 text-center">Streamline farming operations with task management, inventory tracking, and financial planning tools.</p>
+                    <div class="mt-4 text-center">
+                        <a href="farm-management.html" class="text-green-600 hover:text-green-800 font-medium inline-flex items-center">
+                            Learn more
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200 transform transition duration-500 hover:scale-105">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-file-contract text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-2">Contract-based Farming</h3>
+                    <p class="text-gray-600 text-center">Enter into pre-agreed contracts with buyers, ensuring stable pricing and secure revenue.</p>
+                    <div class="mt-4 text-center">
+                        <a href="contracts.html" class="text-green-600 hover:text-green-800 font-medium inline-flex items-center">
+                            Learn more
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200 transform transition duration-500 hover:scale-105">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-tags text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-2">Affordable Dealing</h3>
+                    <p class="text-gray-600 text-center">Find the best deals for crops, tools, and resources with location-based price comparisons.</p>
+                    <div class="mt-4 text-center">
+                        <a href="deals.html" class="text-green-600 hover:text-green-800 font-medium inline-flex items-center">
+                            Learn more
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Feature 6 - Call to Action -->
+                <div class="bg-green-600 text-white rounded-lg shadow-lg p-6 transform transition duration-500 hover:scale-105">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-user-plus text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-2">Join Our Community</h3>
+                    <p class="text-center mb-4">Connect with thousands of farmers and buyers to grow your agricultural business.</p>
+                    <div class="mt-4 text-center">
+                        <button id="signup-btn" class="bg-white text-green-600 hover:bg-green-100 font-bold py-2 px-6 rounded-full transition duration-300 transform hover:scale-105">
+                            Sign Up Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-green-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-800">What Farmers Say</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 relative">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                        <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <p class="text-gray-600 italic mb-4">"The market price alerts have transformed how I sell my crops. I now know exactly when to sell for maximum profit."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-green-600 font-bold">RK</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Rajesh Kumar</h4>
+                                <p class="text-sm text-gray-500">Wheat Farmer, Punjab</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 relative">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                        <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <p class="text-gray-600 italic mb-4">"Direct market access has increased my income by 30%. No more middlemen taking a cut of my hard work."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-green-600 font-bold">SP</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Sunita Patel</h4>
+                                <p class="text-sm text-gray-500">Vegetable Grower, Gujarat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 relative">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                        <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <p class="text-gray-600 italic mb-4">"The farm management system has simplified my record keeping. I can now focus more on farming and less on paperwork."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <span class="text-green-600 font-bold">MR</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Mohan Reddy</h4>
+                                <p class="text-sm text-gray-500">Rice Farmer, Andhra Pradesh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-green-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Farming Business?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Join thousands of farmers who are already benefiting from our platform. Get started today!</p>
+            <button id="cta-signup-btn" class="bg-white text-green-700 hover:bg-green-100 font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                Sign Up for Free
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-leaf text-2xl text-green-400"></i>
+                        <span class="font-bold text-xl">Farmer Connect</span>
+                    </div>
+                    <p class="text-gray-400">Empowering farmers with technology and market access.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="market-prices.html" class="text-gray-400 hover:text-white transition duration-300">Market Prices</a></li>
+                        <li><a href="marketplace.html" class="text-gray-400 hover:text-white transition duration-300">Marketplace</a></li>
+                        <li><a href="farm-management.html" class="text-gray-400 hover:text-white transition duration-300">Farm Management</a></li>
+                        <li><a href="contracts.html" class="text-gray-400 hover:text-white transition duration-300">Contracts</a></li>
+                        <li><a href="deals.html" class="text-gray-400 hover:text-white transition duration-300">Deals</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-map-marker-alt mt-1 text-green-400"></i>
+                            <span class="text-gray-400">abc road, Hyderabad, India</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-phone mt-1 text-green-400"></i>
+                            <span class="text-gray-400">+91 XXXXXXXXXX</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-envelope mt-1 text-green-400"></i>
+                            <span class="text-gray-400">info@XXXXXXXXX.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates and farming tips.</p>
+                    <form id="newsletter-form" class="flex flex-col space-y-2">
+                        <input type="email" placeholder="Your Email" class="px-4 py-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-green-400">
+                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Farmer Connect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden animate__animated animate__fadeIn">
+        <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-green-800">Sign Up</h3>
+                <button id="close-modal" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form id="signup-form" class="space-y-4">
+                <div>
+                    <label for="name" class="block text-gray-700 mb-1">Full Name</label>
+                    <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+                <div>
+                    <label for="phone" class="block text-gray-700 mb-1">Phone Number</label>
+                    <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+                <div>
+                    <label for="email" class="block text-gray-700 mb-1">Email Address</label>
+                    <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+                <div>
+                    <label for="password" class="block text-gray-700 mb-1">Password</label>
+                    <input type="password" id="password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+                <div>
+                    <label for="user-type" class="block text-gray-700 mb-1">I am a</label>
+                    <select id="user-type" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <option value="farmer">Farmer</option>
+                        <option value="dealer">Dealer/Buyer</option>
+                        <option value="both">Both</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                    Create Account
+                </button>
+                <p class="text-center text-gray-600 text-sm">
+                    Already have an account? <a href="#" class="text-green-600 hover:text-green-800">Log In</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

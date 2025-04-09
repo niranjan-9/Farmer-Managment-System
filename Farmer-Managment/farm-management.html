@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Management - Farmer Connect</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body class="bg-green-50 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-green-600 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-leaf text-2xl"></i>
+                    <span class="font-bold text-xl">Farmer Connect</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="hover:text-green-200 transition duration-300">Home</a>
+                    <a href="market-prices.html" class="hover:text-green-200 transition duration-300">Market Prices</a>
+                    <a href="marketplace.html" class="hover:text-green-200 transition duration-300">Marketplace</a>
+                    <a href="farm-management.html" class="hover:text-green-200 transition duration-300 border-b-2 border-white">Farm Management</a>
+                    <a href="contracts.html" class="hover:text-green-200 transition duration-300">Contracts</a>
+                    <a href="deals.html" class="hover:text-green-200 transition duration-300">Deals</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-green-700 pb-4 animate__animated animate__fadeIn">
+            <div class="container mx-auto px-4 flex flex-col space-y-3">
+                <a href="index.html" class="block py-2 px-4 text-white hover:bg-green-800 rounded transition duration-300">Home</a>
+                <a href="market-prices.html" class="block py-2 px-4 text-white hover:bg-green-800 rounded transition duration-300">Market Prices</a>
+                <a href="marketplace.html" class="block py-2 px-4 text-white hover:bg-green-800 rounded transition duration-300">Marketplace</a>
+                <a href="farm-management.html" class="block py-2 px-4 text-white hover:bg-green-800 rounded transition duration-300">Farm Management</a>
+                <a href="contracts.html" class="block py-2 px-4 text-white hover:bg-green-800 rounded transition duration-300">Contracts</a>
+                <a href="deals.html" class="block py-2 px-4 text-white hover:bg-green-800 rounded transition duration-300">Deals</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-green-700 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl font-bold mb-4 animate__animated animate__fadeInDown">Farm Management System</h1>
+                <p class="text-xl mb-8 animate__animated animate__fadeInUp">Streamline your farming operations with task management, inventory tracking, and financial planning tools.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Management Tabs -->
+    <section class="py-8">
+        <div class="container mx-auto px-4">
+            <div class="bg-green-100 rounded-lg p-4 mb-8">
+                <div class="flex flex-wrap justify-center">
+                    <button class="tab-button bg-white text-green-600 border-green-600 px-6 py-2 rounded-t-lg border-b-2 mx-1 mb-1" data-tab="dashboard-tab">
+                        <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
+                    </button>
+                    <button class="tab-button px-6 py-2 rounded-t-lg border-b-2 border-transparent mx-1 mb-1" data-tab="tasks-tab">
+                        <i class="fas fa-tasks mr-2"></i> Tasks
+                    </button>
+                    <button class="tab-button px-6 py-2 rounded-t-lg border-b-2 border-transparent mx-1 mb-1" data-tab="inventory-tab">
+                        <i class="fas fa-boxes mr-2"></i> Inventory
+                    </button>
+                    <button class="tab-button px-6 py-2 rounded-t-lg border-b-2 border-transparent mx-1 mb-1" data-tab="finances-tab">
+                        <i class="fas fa-rupee-sign mr-2"></i> Finances
+                    </button>
+                    <button class="tab-button px-6 py-2 rounded-t-lg border-b-2 border-transparent mx-1 mb-1" data-tab="weather-tab">
+                        <i class="fas fa-cloud-sun mr-2"></i> Weather
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dashboard Tab Content -->
+            <div id="dashboard-tab" class="tab-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-green-500">
+                        <h3 class="text-lg font-semibold mb-2">Upcoming Tasks</h3>
+                        <p class="text-3xl font-bold text-slate-800">8</p>
+                        <p class="text-slate-500">Tasks for this week</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-green-500">
+                        <h3 class="text-lg font-semibold mb-2">Inventory Status</h3>
+                        <p class="text-3xl font-bold text-slate-800">65%</p>
+                        <p class="text-slate-500">Storage capacity used</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-green-500">
+                        <h3 class="text-lg font-semibold mb-2">Monthly Revenue</h3>
+                        <p class="text-3xl font-bold text-slate-800" id="income-summary">₹45,250</p>
+                        <p class="text-green-500 flex items-center">
+                            <i class="fas fa-arrow-up mr-1"></i> +12% from last month
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-green-500">
+                        <h3 class="text-lg font-semibold mb-2">Weather</h3>
+                        <div class="flex items-center">
+                            <i class="fas fa-sun text-amber-500 text-2xl mr-2"></i>
+                            <p class="text-3xl font-bold text-slate-800" id="weather-temp">28°C</p>
+                        </div>
+                        <p class="text-slate-500" id="weather-condition">Sunny, ideal for harvesting</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                    <div class="lg:col-span-2 bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold mb-4">Crop Performance</h3>
+                        <div class="h-64 w-full bg-slate-100 rounded-lg flex items-center justify-center">
+                            <p class="text-slate-500">Crop performance chart will be displayed here</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold mb-4">Recent Activities</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="bg-green-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-tint text-green-500"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Irrigation completed</p>
+                                    <p class="text-sm text-slate-500">Rice field - North</p>
+                                    <p class="text-xs text-slate-400">Today, 8:30 AM</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-green-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-box text-green-500"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Fertilizer applied</p>
+                                    <p class="text-sm text-slate-500">Wheat field - East</p>
+                                    <p class="text-xs text-slate-400">Yesterday, 4:15 PM</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-green-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-truck text-green-500"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Harvest delivered</p>
+                                    <p class="text-sm text-slate-500">To Central Market</p>
+                                    <p class="text-xs text-slate-400">2 days ago</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">Crop Calendar</h3>
+                    <div class="h-64 w-full bg-slate-100 rounded-lg flex items-center justify-center">
+                        <p class="text-slate-500">Crop calendar and scheduling will be displayed here</p>
+                    </div>
+                    <div class="mt-4 flex justify-end">
+                        <button class="text-green-500 font-medium hover:text-green-600 transition-colors">
+                            View Full Calendar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tasks Tab Content -->
+            <div id="tasks-tab" class="tab-content hidden">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-semibold">Task Management</h2>
+                    <button id="add-task-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">
+                        <i class="fas fa-plus mr-2"></i> Add New Task
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Upcoming Tasks</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr class="border-b border-slate-200">
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-slate-500">Task</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-slate-500">Due Date</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-slate-500">Priority</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-slate-500">Status</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-slate-500">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tasks-table-body">
+                                <!-- Tasks will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">Completed Tasks</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr class="border-b border-slate-200">
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-slate-500">Task</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-slate-500">Completion Date</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-slate-500">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-slate-200">
+                                    <td class="py-3 px-4">Planting</td>
+                                    <td class="py-3 px-4">2 weeks ago</td>
+                                    <td class="py-3 px-4">
+                                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">
+                                            Completed
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-slate-200">
+                                    <td class="py-3 px-4">Soil Preparation</td>
+                                    <td class="py-3 px-4">3 weeks ago</td>
+                                    <td class="py-3 px-4">
+                                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">
+                                            Completed
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventory Tab Content -->
+            <div id="inventory-tab" class="tab-content hidden">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-semibold">Inventory Management</h2>
+                    <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">
+                        <i class="fas fa-plus mr-2"></i> Add Inventory
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-green-500">
+                        <h3 class="text-lg font-semibold mb-2">Seeds</h3>
+                        <p class="text-3xl font-bold text-slate-800">250 kg</p>
+                        <p class="text-slate-500">In stock</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-green-500">
+                        <h3 class="text-lg font-semibold mb-2">Fertilizers</h3>
+                        <p class="text-3xl font-bold text-slate-800">500 kg</p>
+                        <p class="text-slate-500">In stock</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-green-500">
+                        <h3 class="text-lg font-semibold mb-2">Pesticides</h3>
+                        <p class="text-3xl font-bold text-slate-800">100 L</p>
+                        <p class="text-slate-500">In stock</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-green-500">
+                        <h3 class="text-lg font-semibold mb-2">Equipment</h3>
+                        <p class="text-3xl font-bold text-slate-800">15</p>
+                        <p class="text-slate-500">Items available</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Inventory Items</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr class="border-b border-slate-200">
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-slate-500">Item</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-slate-500">Category</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-slate-500">Quantity</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-slate-500">Last Updated</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-slate-500">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="inventory-table-body">
+                                <!-- Inventory items will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50 rounded-lg p-6 shadow-md">
+                    <div class="flex items-start">
+                        <i class="fas fa-exclamation-circle text-amber-500 text-xl mr-3 mt-1"></i>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-1">Low Stock Alert</h3>
+                            <p class="text-slate-600 mb-3">
+                                Some items in your inventory are running low. Consider restocking soon to avoid disruptions in your
+                                farming operations.
+                            </p>
+                            <button class="text-amber-600 font-medium hover:text-amber-700 transition-colors">
+                                View Low Stock Items
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Finances Tab Content -->
+            <div id="finances-tab" class="tab-content hidden">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-semibold">Financial Management</h2>
+                    <div class="flex gap-3">
+                        <button class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-6 rounded-lg transition duration-300">
+                            <i class="fas fa-minus-circle mr-2"></i> Add Expense
+                        </button>
+                        <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">
+                            <i class="fas fa-plus-circle mr-2"></i> Add Income
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-green-500">
+                        <h3 class="text-lg font-semibold mb-2">Total Income</h3>
+                        <p class="text-3xl font-bold text-slate-800">₹1,25,000</p>
+                        <p class="text-green-500 flex items-center">
+                            <i class="fas fa-arrow-up mr-1"></i> +15% from last month
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-red-500">
+                        <h3 class="text-lg font-semibold mb-2">Total Expenses</h3>
+                        <p class="text-3xl font-bold text-slate-800" id="expenses-summary">₹45,000</p>
+                        <p class="text-slate-500">This month</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-amber-500">
+                        <h3 class="text-lg font-semibold mb-2">Net Profit</h3>
+                        <p class="text-3xl font-bold text-slate-800" id="profit-summary">₹80,000</p>
+                        <p class="text-green-500 flex items-center">
+                            <i class="fas fa-arrow-up mr-1"></i> +22% from last month
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+                        <h3 class="text-lg font-semibold mb-2">Pending Payments</h3>
+                        <p class="text-3xl font-bold text-slate-800">₹15,000</p>
+                        <p class="text-slate-500">From 3 buyers</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold mb-4">Income Overview</h3>
+                        <div class="h-64 w-full bg-slate-100 rounded-lg flex items-center justify-center">
+                            <p class="text-slate-500">Income chart will be displayed here</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-semibold mb-4">Expense Breakdown</h3>
+                        <div class="h-64 w-full bg-slate-100 rounded-lg flex items-center justify-center">
+                            <p class="text-slate-500">Expense chart will be displayed here</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">Recent Transactions</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr class="border-b border-slate-200">
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-slate-500">Date</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-slate-500">Description</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-slate-500">Category</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-slate-500">Amount</th>
+                                    <th class="py-3 px-4 text-left text-sm font-medium text-slate-500">Type</th>
+                                </tr>
+                            </thead>
+                            <tbody id="financial-table-body">
+                                <!-- Financial transactions will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weather Tab Content -->
+            <div id="weather-tab" class="tab-content hidden">
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <div class="flex flex-col md:flex-row items-center justify-between">
+                        <div class="mb-6 md:mb-0">
+                            <h3 class="text-2xl font-semibold mb-2">Today's Weather</h3>
+                            <p class="text-slate-600 mb-4" id="weather-location">Pune, Maharashtra</p>
+                            <div class="flex items-center">
+                                <i class="fas fa-sun text-amber-500 text-4xl mr-4"></i>
+                                <div>
+                                    <p class="text-5xl font-bold text-slate-800">28°C</p>
+                                    <p class="text-slate-600">Sunny</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-slate-50 p-3 rounded-lg">
+                                <p class="text-sm text-slate-500 mb-1">Humidity</p>
+                                <div class="flex items-center">
+                                    <i class="fas fa-tint text-blue-500 mr-2"></i>
+                                    <p class="font-semibold" id="weather-humidity">65%</p>
+                                </div>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-lg">
+                                <p class="text-sm text-slate-500 mb-1">Wind</p>
+                                <div class="flex items-center">
+                                    <i class="fas fa-wind text-blue-500 mr-2"></i>
+                                    <p class="font-semibold" id="weather-wind">12 km/h</p>
+                                </div>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-lg">
+                                <p class="text-sm text-slate-500 mb-1">Precipitation</p>
+                                <div class="flex items-center">
+                                    <i class="fas fa-cloud-rain text-blue-500 mr-2"></i>
+                                    <p class="font-semibold">0%</p>
+                                </div>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-lg">
+                                <p class="text-sm text-slate-500 mb-1">UV Index</p>
+                                <div class="flex items-center">
+                                    <i class="fas fa-sun text-blue-500 mr-2"></i>
+                                    <p class="font-semibold">High</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                    <h3 class="text-xl font-semibold mb-4">5-Day Forecast</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4" id="forecast-container">
+                        <!-- Forecast will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-4">Weather Alerts</h3>
+                    <div class="bg-amber-50 p-4 rounded-lg mb-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-exclamation-circle text-amber-500 text-xl mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold mb-1">Heat Wave Warning</h4>
+                                <p class="text-slate-600 mb-2">
+                                    Temperatures expected to rise above 35°C in the next week. Ensure proper irrigation for crops.
+                                </p>
+                                <p class="text-sm text-slate-500">Valid until: Apr 15, 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <div class="flex items-start">
+                            <i class="fas fa-info-circle text-green-500 text-xl mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold mb-1">Ideal Planting Conditions</h4>
+                                <p class="text-slate-600 mb-2">
+                                    Weather conditions are optimal for planting wheat and barley in the coming week.
+                                </p>
+                                <p class="text-sm text-slate-500">Valid until: Apr 20, 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Task Modal -->
+    <div id="add-task-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden animate__animated animate__fadeIn modal">
+        <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-green-800">Add New Task</h3>
+                <button class="close-add-task-modal text-gray-500 hover:text-gray-700 focus:outline-none">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form id="add-task-form" class="space-y-4">
+                <div>
+                    <label for="task-title" class="block text-gray-700 mb-1">Task Title</label>
+                    <input type="text" id="task-title" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter task title">
+                </div>
+                <div>
+                    <label for="task-due-date" class="block text-gray-700 mb-1">Due Date</label>
+                    <input type="date" id="task-due-date" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+                <div>
+                    <label for="task-priority" class="block text-gray-700 mb-1">Priority</label>
+                    <select id="task-priority" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="task-category" class="block text-gray-700 mb-1">Category</label>
+                    <select id="task-category" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <option value="cultivation">Cultivation</option>
+                        <option value="harvesting">Harvesting</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="procurement">Procurement</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                    Add Task
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Task Modal -->
+    <div id="edit-task-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden animate__animated animate__fadeIn modal">
+        <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-green-800">Edit Task</h3>
+                <button class="close-edit-task-modal text-gray-500 hover:text-gray-700 focus:outline-none">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form id="edit-task-form" class="space-y-4">
+                <input type="hidden" id="edit-task-id">
+                <div>
+                    <label for="edit-task-title" class="block text-gray-700 mb-1">Task Title</label>
+                    <input type="text" id="edit-task-title" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter task title">
+                </div>
+                <div>
+                    <label for="edit-task-due-date" class="block text-gray-700 mb-1">Due Date</label>
+                    <input type="date" id="edit-task-due-date" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+                <div>
+                    <label for="edit-task-priority" class="block text-gray-700 mb-1">Priority</label>
+                    <select id="edit-task-priority" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="edit-task-category" class="block text-gray-700 mb-1">Category</label>
+                    <select id="edit-task-category" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <option value="cultivation">Cultivation</option>
+                        <option value="harvesting">Harvesting</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="procurement">Procurement</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="edit-task-status" class="block text-gray-700 mb-1">Status</label>
+                    <select id="edit-task-status" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <option value="pending">Pending</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                    Update Task
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-leaf text-2xl text-green-400"></i>
+                        <span class="font-bold text-xl">Farmer Connect</span>
+                    </div>
+                    <p class="text-gray-400">Empowering farmers with technology and market access.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="market-prices.html" class="text-gray-400 hover:text-white transition duration-300">Market Prices</a></li>
+                        <li><a href="marketplace.html" class="text-gray-400 hover:text-white transition duration-300">Marketplace</a></li>
+                        <li><a href="farm-management.html" class="text-gray-400 hover:text-white transition duration-300">Farm Management</a></li>
+                        <li><a href="contracts.html" class="text-gray-400 hover:text-white transition duration-300">Contracts</a></li>
+                        <li><a href="deals.html" class="text-gray-400 hover:text-white transition duration-300">Deals</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-map-marker-alt mt-1 text-green-400"></i>
+                            <span class="text-gray-400">123 Farming Road, Agritown, India</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-phone mt-1 text-green-400"></i>
+                            <span class="text-gray-400">+91 1234567890</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-envelope mt-1 text-green-400"></i>
+                            <span class="text-gray-400">info@farmerconnect.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates and farming tips.</p>
+                    <form id="newsletter-form" class="flex flex-col space-y-2">
+                        <input type="email" placeholder="Your Email" class="px-4 py-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-green-400">
+                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Farmer Connect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/farm-management.js"></script>
+</body>
+</html>
